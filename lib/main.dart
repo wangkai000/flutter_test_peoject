@@ -4,15 +4,33 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:dio/dio.dart';
+
 //import 'package:testflutter/lib/httpConfig.dart';
 import 'package:testflutter/httpConfig.dart';
 import './httpConfig.dart';
+import './openingOrder.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Demo();
+    return MaterialApp(
+
+      //定义全局的appbar
+      theme: ThemeData.light().copyWith(
+        appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(
+
+          ),
+            textTheme:TextTheme(
+              title:TextStyle(color:Color.fromRGBO(51, 51, 51,1))
+            )
+        )
+      ),
+      home: Demo(),
+
+    );
   }
 }
 
@@ -46,10 +64,7 @@ class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return OKToast(
-
-      child: MaterialApp(
-          title: 'login',
-          home: Scaffold(
+        child: Scaffold(
 //                body:Center(
 //                  child:Container(
 //                    width:300.0,
@@ -71,111 +86,104 @@ class _DemoState extends State<Demo> {
 //            appBar:new AppBar(
 //              title:new Text('demotitle'),
 //            ),]
-            body: Container(
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: new NetworkImage(imgbg),
-                    fit: BoxFit.fitWidth,
-                  ),
-                ),
-                child: Container(
-                  decoration: BoxDecoration(boxShadow: [
-                    BoxShadow(
-                      color: Color.fromRGBO(222, 222, 222, 0),
-                      blurRadius: 5.0,
+      body: Container(
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: new NetworkImage(imgbg),
+              fit: BoxFit.fitWidth,
+            ),
+          ),
+          child: Container(
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Color.fromRGBO(222, 222, 222, 0),
+                blurRadius: 5.0,
+              ),
+            ]),
+            child: new Form(
+                key: _formKey,
+                child: new Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
+                      child: new TextFormField(
+                        controller: _usernameCon,
+                        decoration: new InputDecoration(
+                          border: InputBorder.none,
+                          //去掉输入框的下滑线
+                          filled: false,
+                          hintStyle: TextStyle(
+                              color: Colors.deepOrange, fontSize: 13.0),
+                          labelText: '   请输入账号',
+//                              errorText: "",
+                          counterStyle: TextStyle(color: Colors.deepOrange),
+                          labelStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                          ),
+                          suffixIcon: Icon(Icons.person),
+                          icon: Icon(Icons.person),
+                          contentPadding: EdgeInsets.all(5.0),
+                          fillColor: Colors.white,
+                          counterText: "", //此处控制最大字符是否显示
+                        ),
+                        style: TextStyle(color: Colors.white),
+                        maxLength: 10,
+                        maxLengthEnforced: true,
+                      ),
                     ),
-                  ]),
-                  child: new Form(
-                      key: _formKey,
-                      child: new Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
-                            child: new TextFormField(
-                              controller: _usernameCon,
-                              decoration: new InputDecoration(
-                                border: InputBorder.none,
-                                //去掉输入框的下滑线
-                                filled: false,
-                                hintStyle: TextStyle(
-                                    color: Colors.deepOrange, fontSize: 13.0),
-                                labelText: '   请输入账号',
+
+                    Container(
+                      margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
+                      child: new TextFormField(
+                        controller: _passwordCon,
+                        decoration: new InputDecoration(
+                          border: InputBorder.none,
+                          //去掉输入框的下滑线
+                          filled: false,
+
+                          hintStyle: TextStyle(
+                              color: Colors.deepOrange, fontSize: 13.0),
+                          labelText: '   请输入密码',
 //                              errorText: "",
-                                counterStyle: TextStyle(color: Colors.deepOrange),
-                                labelStyle: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                ),
-                                suffixIcon: Icon(Icons.person),
-                                icon: Icon(Icons.person),
-                                contentPadding: EdgeInsets.all(5.0),
-                                fillColor: Colors.white,
-                                counterText: "",//此处控制最大字符是否显示
-                              ),
-                                style: TextStyle(color: Colors.white),
-                                maxLength:10,
-                                maxLengthEnforced:true,
-
-                            ),
+                          counterStyle: TextStyle(color: Colors.deepOrange),
+                          labelStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
                           ),
+                          suffixIcon: Icon(Icons.person),
+                          icon: Icon(Icons.phone),
+                          contentPadding: EdgeInsets.all(5.0),
+                          fillColor: Colors.white,
+                        ),
+                        obscureText: false,
+                        style: TextStyle(color: Colors.white),
+                        maxLength: 10,
+                        maxLengthEnforced: false,
+                      ),
+                    ),
 
-                          Container(
-                            margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
-                            child: new TextFormField(
-                              controller: _passwordCon,
-                              decoration: new InputDecoration(
-                                border: InputBorder.none,
-                                //去掉输入框的下滑线
-                                filled: false,
+                    //点击按钮
 
-                                hintStyle: TextStyle(
-                                    color: Colors.deepOrange, fontSize: 13.0),
-                                labelText: '   请输入密码',
-//                              errorText: "",
-                                counterStyle: TextStyle(color: Colors.deepOrange),
-                                labelStyle: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                ),
-                                suffixIcon: Icon(Icons.person),
-                                icon: Icon(Icons.phone),
-                                contentPadding: EdgeInsets.all(5.0),
-                                fillColor: Colors.white,
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                      child: new MaterialButton(
+                        color: Colors.blue,
+                        textColor: Colors.white,
+                        minWidth: 200.0,
+                        padding: new EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+                        onPressed: () {
+                          var username = _usernameCon.text;
+                          var password = _passwordCon.text;
 
+                          print('username:$username,password:$password');
 
-                              ),
-                              obscureText: false,
-                              style: TextStyle(color: Colors.white),
-                              maxLength:10,
-                              maxLengthEnforced:false,
-
-
-                            ),
-                          ),
-
-                          //点击按钮
-
-                          Container(
-                            margin: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
-                            child: new MaterialButton(
-                              color: Colors.blue,
-                              textColor: Colors.white,
-                              minWidth: 200.0,
-                              padding:
-                                  new EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-                              onPressed: () {
-                                var username = _usernameCon.text;
-                                var password = _passwordCon.text;
-
-                                print('username:$username,password:$password');
-
-                                if(username=='' || password==''){
-                                  showToast(" 账号密码不能为空  ",
-                                      backgroundColor:Color.fromRGBO(0, 0,0,.7)
-                                  );
-                                }else{
+                          if (username == '' || password == '') {
+                            showToast(" 账号密码不能为空  ",
+                                backgroundColor: Color.fromRGBO(0, 0, 0, .7));
+                          } else {
 //                                  void getHttp() async {
 //                                    try {
 //                                      Response response = await Dio().get("http://nodedemo.tianmiao.xyz/register");
@@ -188,63 +196,67 @@ class _DemoState extends State<Demo> {
 //                                    }
 //                                  }
 
-                                  getData('register',{username:username,password:password});
-
-
-
-
-                                }
-                              },
-                              child: new Text('登陆'),
-                            ),
-                          )
-                        ],
-                      )),
+                            getData(
+                                'register',
+                                {username: username, password: password},
+                                context);
+                          }
+                        },
+                        child: new Text('登陆'),
+                      ),
+                    )
+                  ],
                 )),
           )),
-    );
+    ));
   }
 }
 
-
-
-
-
-Future getData(url,data) async {
-
-
+Future getData(url, data, BuildContext context) async {
   var response = await HttpUtil().get(url, data: data);
   print(response['success']);
-  if(response['success']==false){
+  if (response['success'] == false) {
     showToast(" success  ",
-         backgroundColor:Color.fromARGB(110,110, 255, 255 )
-   );
+        backgroundColor: Color.fromARGB(110, 110, 255, 255));
     //跳转页面
-    
-
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => openingOrder()));
   }
-
-}DioError(e) {
-  print(e);
-  print('无网络');
-  showToast(" 无网络  ",
-      backgroundColor:Color.fromARGB(110,110, 255, 255 )
-  );
 }
 
-
+DioError(e) {
+  print(e);
+  print('无网络');
+  showToast(" 无网络  ", backgroundColor: Color.fromARGB(110, 110, 255, 255));
+}
 
 //官网http请求
 void getHttp() async {
   try {
-    Response response = await Dio().get("http://nodedemo.tianmiao.xyz/register");
+    Response response =
+        await Dio().get("http://nodedemo.tianmiao.xyz/register");
 
-
-
-    if(response.statusCode == 200){
-
-    }
+    if (response.statusCode == 200) {}
   } catch (e) {
     print(e);
+  }
+}
+
+class Screen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(title: new Text("home hader")),
+      body: Center(
+        child: RaisedButton(
+          child: new Text("test"),
+          onPressed: () {
+            Navigator.pop(context);
+            print("点击");
+          },
+        ),
+      ),
+    );
   }
 }
