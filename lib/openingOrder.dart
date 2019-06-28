@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 
 
 
+
 class openingOrder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class openingOrder extends StatelessWidget {
   }
 }
 
-//必须createState
+//必须createState创建状态类
 class WidgetHome extends StatefulWidget {
   @override
   openingOrderState createState() => openingOrderState();
@@ -26,6 +27,7 @@ class openingOrderState extends State<WidgetHome> {
     //点击数字
     _umberClick(unmber){
        print(unmber);
+       print(MediaQuery.of(context).size.width);
     };
 
 
@@ -43,6 +45,8 @@ class openingOrderState extends State<WidgetHome> {
           padding:const EdgeInsets.fromLTRB(16, 0, 16, 0),
           child:Column(
               children: <Widget>[
+
+                //listItem
                 InkWell(
                   onTap:(){
                     print('跳转到全部桌位列表');
@@ -77,8 +81,8 @@ class openingOrderState extends State<WidgetHome> {
                   borderRadius:BorderRadius.circular(3),
                   child: Container(
                     //最小高度206
-                    constraints: BoxConstraints(minHeight: 206),
-                    color:Color.fromRGBO(230, 230, 230, 1),
+                    constraints: BoxConstraints(minHeight: 210),
+                    color:Color.fromRGBO(247, 247, 247, 1),
 
                     child:Column(
                           children: <Widget>[
@@ -147,6 +151,8 @@ class openingOrderState extends State<WidgetHome> {
                               )
 
                             ),
+
+
                             Container(
                                 height:106.0,
 
@@ -157,6 +163,8 @@ class openingOrderState extends State<WidgetHome> {
                                         children: <Widget>[
                                           Container(
                                             height:53.0,
+
+
                                               child:Row(
                                                     children: <Widget>[
                                                       Expanded(
@@ -165,6 +173,10 @@ class openingOrderState extends State<WidgetHome> {
                                                             _umberClick(1);
                                                           },
                                                           child: Container(
+                                                            decoration: new BoxDecoration(
+                                                              border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
+
+                                                            ),
                                                             child:Center(
                                                               child: Text("1",
                                                                 style:TextStyle(
@@ -184,6 +196,10 @@ class openingOrderState extends State<WidgetHome> {
                                                             _umberClick(2);
                                                           },
                                                           child: Container(
+                                                            decoration: new BoxDecoration(
+                                                              border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
+
+                                                            ),
                                                             child:Center(
                                                               child: Text("2",
                                                                 style:TextStyle(
@@ -203,6 +219,10 @@ class openingOrderState extends State<WidgetHome> {
                                                             _umberClick(3);
                                                           },
                                                           child: Container(
+                                                            decoration: new BoxDecoration(
+                                                              border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
+
+                                                            ),
                                                             child:Center(
                                                               child: Text("3",
                                                                 style:TextStyle(
@@ -229,6 +249,10 @@ class openingOrderState extends State<WidgetHome> {
                                                       _umberClick(4);
                                                     },
                                                     child: Container(
+                                                      decoration: new BoxDecoration(
+                                                        border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
+
+                                                      ),
                                                       child:Center(
                                                         child: Text("4",
                                                           style:TextStyle(
@@ -248,6 +272,10 @@ class openingOrderState extends State<WidgetHome> {
                                                       _umberClick(5);
                                                     },
                                                     child: Container(
+                                                      decoration: new BoxDecoration(
+                                                        border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
+
+                                                      ),
                                                       child:Center(
                                                         child: Text("5",
                                                           style:TextStyle(
@@ -267,6 +295,10 @@ class openingOrderState extends State<WidgetHome> {
                                                       _umberClick(6);
                                                     },
                                                     child: Container(
+                                                      decoration: new BoxDecoration(
+                                                        border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
+
+                                                      ),
                                                       child:Center(
                                                         child: Text("6",
                                                           style:TextStyle(
@@ -293,6 +325,10 @@ class openingOrderState extends State<WidgetHome> {
                                           _umberClick(0);
                                         },
                                         child: Container(
+                                          decoration: new BoxDecoration(
+                                            border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
+
+                                          ),
                                           child:Center(
                                             child: Text("0",
                                               style:TextStyle(
@@ -321,6 +357,10 @@ class openingOrderState extends State<WidgetHome> {
                                           _umberClick(7);
                                         },
                                         child: Container(
+                                          decoration: new BoxDecoration(
+                                            border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
+
+                                          ),
                                           child:Center(
                                             child: Text("7",
                                               style:TextStyle(
@@ -340,7 +380,12 @@ class openingOrderState extends State<WidgetHome> {
                                           _umberClick(8);
                                         },
                                         child: Container(
+                                          decoration: new BoxDecoration(
+                                            border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
+
+                                          ),
                                           child:Center(
+
                                             child: Text("8",
                                               style:TextStyle(
                                                 fontSize: 12,
@@ -359,6 +404,10 @@ class openingOrderState extends State<WidgetHome> {
                                           _umberClick(9);
                                         },
                                         child: Container(
+                                          decoration: new BoxDecoration(
+                                            border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
+
+                                          ),
                                           child:Center(
                                             child: Text("9",
                                               style:TextStyle(
@@ -377,10 +426,17 @@ class openingOrderState extends State<WidgetHome> {
                                         onTap:(){
                                           _umberClick('delete');
                                         },
-                                        child: Center(
-                                               child:Icon(Icons.highlight_off),
+                                        child: Container(
+                                          decoration: new BoxDecoration(
+                                            border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
+
+                                          ),
+                                          child: Center(
+
+                                                 child:Icon(Icons.highlight_off),
 
 
+                                          ),
                                         ),
                                       ),
                                       flex: 1,
@@ -490,6 +546,100 @@ class openingOrderState extends State<WidgetHome> {
 
                   ),
                 ),
+
+
+
+
+                //备注
+                Container(
+                  child:Column(
+                     children: <Widget>[
+                       Container(
+
+                         width:MediaQuery.of(context).size.width-16-16,
+                         padding:const EdgeInsets.fromLTRB(0, 6.0, 0, 5),
+                         child:Text('备注',
+                           textAlign:TextAlign.left,
+                           style:TextStyle(
+                             fontSize: 12,
+                             color:Color.fromRGBO(153, 153, 153, 1),
+                           ),
+
+                         ),
+                       ),
+
+                       Container(
+
+                           child: Wrap(
+                             spacing: 1.0,
+                             runSpacing: 0.0,
+                             children: <Widget>[
+                               Chip(
+                                 label: Text("abcd"),
+                                 avatar: CircleAvatar(
+                                   backgroundColor: Color(0xfff1f1f1),
+                                   child: Text("A",style: TextStyle(fontSize: 12.0),),
+                                 ),
+                               ),
+                               Chip(
+                                 label: Text("abcd"),
+                                 avatar: CircleAvatar(
+                                   backgroundColor: Color(0xfff1f1f1),
+                                   child: Icon(Icons.alarm),
+                                 ),
+                               ),
+                               Chip(
+                                 label: Text("abcd"),
+                                 avatar: Icon(Icons.alarm),
+                               ),
+                               Chip(
+                                 label: Text("abcd"),
+                                 avatar: CircleAvatar(
+                                   backgroundColor: Color(0xfff1f1f1),
+                                   child: Text("C",style: TextStyle(fontSize: 12.0),),
+                                 ),
+                               ),
+                               Chip(
+                                 label: Text("abcd"),
+                                 padding: EdgeInsets.only(left: 20.0),
+                                 avatar: CircleAvatar(
+                                   backgroundColor: Color(0xfff1f1f1),
+                                   child: Text("D",style: TextStyle(fontSize: 12.0),),
+                                 ),
+                               ),
+                               Chip(
+                                 label: Text("abcd"),
+                               ),
+                               Chip(
+                                 label: Text("abcd"),
+                               ),
+                               Chip(
+                                 label: Text("abcd"),
+                               ),
+                               Chip(
+                                 label: Text("abcd"),
+                               ),
+                               Chip(
+                                 label: Text("abcd"),
+                               ),
+                               Chip(
+                                 label: Text("abcd"),
+                               ),
+                               Chip(
+                                 label: Text("abcd"),
+                               ),Chip(
+                                 label: Text("abcd"),
+                               ),
+
+
+                             ],
+                           ),
+
+                       ),
+
+                     ],
+                  ),
+                )
 
 
 
