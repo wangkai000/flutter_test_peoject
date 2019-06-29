@@ -677,6 +677,11 @@ class openingOrderState extends State<WidgetHome> {
             ),
 
 
+           Container(
+              height:38,
+           ),
+
+
 
 
               //底部button
