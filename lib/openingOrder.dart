@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
+import './tablePosition.dart';
 
 
 
@@ -68,6 +68,9 @@ class openingOrderState extends State<WidgetHome> {
                           //listItem
                           InkWell(
                             onTap:(){
+                              //跳转页面
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (BuildContext context) => tablePosition()));
                               print('跳转到全部桌位列表');
                             },
                             child: ListTile(
@@ -504,6 +507,7 @@ class openingOrderState extends State<WidgetHome> {
                                        spacing: 0.0,
                                        runSpacing: 0.0,
                                        children: <Widget>[
+
                                          Chip(
                                            label: Text("不放辣"),
 
