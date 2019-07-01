@@ -504,143 +504,211 @@ class openingOrderState extends State<WidgetHome> {
                                  Container(
                                    width:MediaQuery.of(context).size.width-16-16,
                                      child: Wrap(
-                                       spacing: 0.0,
-                                       runSpacing: 0.0,
+                                       spacing: 1.2,
+                                       runSpacing: -10.6,
+
                                        children: <Widget>[
 
-                                         Chip(
-                                           label: Text("不放辣"),
 
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
 
                                          ),
-                                         Chip(
-                                           label: Text("不放糖"),
-                                           padding: EdgeInsets.only(left:1.0),
                                          ),
-                                         Chip(
-                                           label: Text("不放葱"),
-                                           padding: EdgeInsets.only(left:1.0),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
                                          ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
                                          ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
                                          ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不放辣"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不"),
+
+                                           ),
+                                         ),
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print('点击了标签');
+                                           },
+                                           child: Chip(
+                                             label: Text("不"),
+
+                                           ),
                                          ),
 
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-
-
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-
-
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
-                                         Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),   Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),   Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),   Chip(
-                                           label: Text("多辣"),
-                                           padding: EdgeInsets.only(left:1.0),
-                                         ),
 
 
 
@@ -690,7 +758,9 @@ class openingOrderState extends State<WidgetHome> {
                                          child: TextField(
                                            maxLines: 1,
                                            maxLength:20,
-                                           decoration: InputDecoration.collapsed(hintText: "请填写菜品备注,最多20字"),
+                                           decoration: InputDecoration.collapsed(hintText: "请填写菜品备注,最多20字",
+                                               hintStyle:TextStyle(fontSize: 12, color: Colors.grey),
+                                           ),
 
                                          ),
                                        ),
