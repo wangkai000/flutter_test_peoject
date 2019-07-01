@@ -677,7 +677,7 @@ class openingOrderState extends State<WidgetHome> {
 
 
                                      Container(
-                                       padding: EdgeInsets.all(0.0),
+                                       padding:const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 100.0),
                                        child: Container(
                                          decoration: new BoxDecoration(
                                            border: new Border.all(color:Color.fromRGBO(230, 230, 230, 0.6), width: 1), // 边色与边宽度
@@ -692,9 +692,7 @@ class openingOrderState extends State<WidgetHome> {
                                        ),
                                        ),
 
-                                 Container(
-                                   height:100,
-                                 ),
+
 
 
 
