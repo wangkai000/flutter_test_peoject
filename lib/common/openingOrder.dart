@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import './tablePosition.dart';
+import 'package:testflutter/common/tablePosition.dart';
 
 
 
@@ -12,8 +12,11 @@ class openingOrder extends StatelessWidget {
   }
 }
 
+
+
 //必须createState创建状态类
 class WidgetHome extends StatefulWidget {
+
   @override
   openingOrderState createState() => openingOrderState();
 }
@@ -22,10 +25,59 @@ class WidgetHome extends StatefulWidget {
 
 
 class openingOrderState extends State<WidgetHome> {
-  //备注button
-  List<Widget> remarksButtonArr = [];
+
+  //就餐人数
+  var   _peopleNumber=0;
+
   //接受
   Widget remarksButtonArrOntent;
+
+  //备注button
+  List<Widget> remarksButtonArr = [];
+
+
+  //备注
+  TextEditingController _remarks;
+
+
+
+  @override
+  void initState() {
+    print("initState 初始化");
+    super.initState();
+    _remarks = TextEditingController();
+
+
+
+  }
+
+  @override
+  void didChangeDependencies() {
+//    print('didChangeDependencies 状态变化');
+    super.didChangeDependencies();
+  }
+
+
+
+  @override
+  void deactivate() {
+//    print('deactivate 离开页面(停用 非销毁)');
+    super.deactivate();
+  }
+
+
+
+  @override
+  void dispose() {
+//    print('dispose 销毁');
+//    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+
+
+    _remarks.dispose();
+  }
+
+
 
   @override
 
@@ -35,12 +87,36 @@ class openingOrderState extends State<WidgetHome> {
 
 
     //点击数字
-    _umberClick(unmber){
-       print(unmber);
-       print(MediaQuery.of(context).size.width);
+    _umberClick(number){
+
+//      print(MediaQuery.of(context).size.width);
+      setState(() => {
+       if(number=='delete'){
+          if(_peopleNumber>10){
+            _peopleNumber=int.parse((_peopleNumber.toString()).substring(0,1))
+         }else{
+            _peopleNumber=0
+          }
+
+
+      }else{
+         if(_peopleNumber==0){
+           _peopleNumber=number
+
+         }else{
+           if(_peopleNumber<10){
+             _peopleNumber=int.parse(_peopleNumber.toString()+number.toString())
+            }
+
+         },
+      }
+
+      });
+
+
     };
 
-
+//   print('最后的 build ');
     return Scaffold(
 
       resizeToAvoidBottomPadding: true, //输入框抵住键盘 true 默认
@@ -146,7 +222,7 @@ class openingOrderState extends State<WidgetHome> {
                                                   padding: EdgeInsets.all(5.0),
                                                   child:Row(
                                                     children: <Widget>[
-                                                      Text("  ${233}  ",
+                                                      Text("  ${_peopleNumber}  ",
 //                                              textAlign:TextAlign.right,
                                                         style:TextStyle(
                                                           fontSize: 16,
@@ -756,6 +832,7 @@ class openingOrderState extends State<WidgetHome> {
 
                                          ),
                                          child: TextField(
+                                           controller: _remarks,
                                            maxLines: 1,
                                            maxLength:20,
                                            decoration: InputDecoration.collapsed(hintText: "请填写菜品备注,最多20字",
@@ -809,7 +886,8 @@ class openingOrderState extends State<WidgetHome> {
                           minWidth: 300.0,
                           padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                           onPressed: () {
-                            print('点击点菜');
+                            print('点击点菜${_remarks.text }');
+
                           },
                           child: new Text('开始点菜'),
                         ),

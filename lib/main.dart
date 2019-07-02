@@ -6,9 +6,9 @@ import 'package:oktoast/oktoast.dart';
 import 'package:dio/dio.dart';
 
 //import 'package:testflutter/lib/httpConfig.dart';
-import 'package:testflutter/httpConfig.dart';
-import './httpConfig.dart';
-import './openingOrder.dart';
+import 'package:testflutter/common/httpConfig.dart';
+import 'package:testflutter/common/httpConfig.dart';
+import 'package:testflutter/common/openingOrder.dart';
 
 void main() => runApp(MyApp());
 

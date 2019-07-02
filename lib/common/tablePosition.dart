@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import './radio.dart';
+import 'package:testflutter/common/radio.dart';
 
 class tablePosition extends StatefulWidget {
   @override
@@ -14,7 +14,10 @@ class _State extends State<tablePosition> {
 
   @override
   Widget build(BuildContext context) {
+
+    print('最后的 build2 ');
     return Scaffold(
+
       appBar: AppBar(
         title: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
           Text('${pageName}'),
@@ -402,5 +405,7 @@ class _State extends State<tablePosition> {
         ],
       )),
     );
+
+
   }
 }
