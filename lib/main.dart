@@ -204,7 +204,16 @@ class _DemoState extends State<Demo> {
                         },
                         child: new Text('登陆'),
                       ),
+                    ),
+                    MaterialButton(
+                        onPressed: () {
+                          
+                        },
+                      child:Text("收款"),
                     )
+
+
+
                   ],
                 )),
           )),

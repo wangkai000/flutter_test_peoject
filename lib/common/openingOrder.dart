@@ -104,12 +104,8 @@ class openingOrderState extends State<WidgetHome> {
                                                if(_remarks.text.indexOf(item['name'])==-1){
                                                  setState(() => _remarks.text=_remarks.text+item['name']);
                                                }
-
-
                                              }
-
-
-                                           },
+                                             },
                                              child: Chip(
                                                label: Text("${item['name']}"),
 
