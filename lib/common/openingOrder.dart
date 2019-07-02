@@ -98,7 +98,17 @@ class openingOrderState extends State<WidgetHome> {
                                            onTap:(){
                                              //跳转页面
 
-                                             print(item['name']);
+//                                             print(item['name']);
+//                                             print(_remarks.text.indexOf(item['name']));
+                                             if(_remarks.text.length<20 && (_remarks.text+item['name']).length<20){
+                                               if(_remarks.text.indexOf(item['name'])==-1){
+                                                 setState(() => _remarks.text=_remarks.text+item['name']);
+                                               }
+
+
+                                             }
+
+
                                            },
                                              child: Chip(
                                                label: Text("${item['name']}"),
@@ -142,6 +152,9 @@ class openingOrderState extends State<WidgetHome> {
 
 
     };
+
+
+
 
 
 //   print('最后的 build ');
@@ -719,10 +732,12 @@ class openingOrderState extends State<WidgetHome> {
                           minWidth: 300.0,
                           padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                           onPressed: () {
-                            print('点击点菜${_remarks.text }');
+                            print('桌台:${null }');
+                            print('就餐人数:${_peopleNumber }');
+                            print('口味文本框:${_remarks.text }');
 
                           },
-                          child: new Text('开始点菜'),
+                          child: new Text('确定'),
                         ),
                       ),
 
