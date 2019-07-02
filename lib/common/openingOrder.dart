@@ -29,12 +29,8 @@ class openingOrderState extends State<WidgetHome> {
   //就餐人数
   var   _peopleNumber=0;
 
-  //接受
-  Widget remarksButtonArrOntent;
-
   //备注button
-  List<Widget> remarksButtonArr = [];
-
+  List<Widget> _contentButton=[]; //单独一个widget组件，用于返回需要生成的内容
 
   //备注
   TextEditingController _remarks;
@@ -84,6 +80,37 @@ class openingOrderState extends State<WidgetHome> {
   Widget build(BuildContext context) {
 
 
+    //获取接口button list 接口
+    _obtainButtonArr(){
+
+      _contentButton=[];
+
+
+
+
+
+      var remarksButtonArr = [];
+      remarksButtonArr = [{'name':'不放辣'},{'name':'不放糖'},{'name':'少放盐'},{'name':'少放盐'},{'name':'微辣'},{'name':'冷上热待'},];
+       for(var item in remarksButtonArr){
+                  _contentButton.add(
+
+                                         InkWell(
+                                           onTap:(){
+                                             //跳转页面
+
+                                             print(item['name']);
+                                           },
+                                             child: Chip(
+                                               label: Text("${item['name']}"),
+
+                                           ),
+                                         ),
+                  );
+       };
+
+
+     };
+
 
 
     //点击数字
@@ -116,7 +143,11 @@ class openingOrderState extends State<WidgetHome> {
 
     };
 
+
 //   print('最后的 build ');
+    _obtainButtonArr();
+
+
     return Scaffold(
 
       resizeToAvoidBottomPadding: true, //输入框抵住键盘 true 默认
@@ -582,223 +613,25 @@ class openingOrderState extends State<WidgetHome> {
                                      child: Wrap(
                                        spacing: 1.2,
                                        runSpacing: -10.6,
+                                         children:_contentButton,
+ //                                    children: <Widget>[
 
-                                       children: <Widget>[
 
-
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                         ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不放辣"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不"),
-
-                                           ),
-                                         ),
-                                         InkWell(
-                                           onTap:(){
-                                             //跳转页面
-
-                                             print('点击了标签');
-                                           },
-                                           child: Chip(
-                                             label: Text("不"),
-
-                                           ),
-                                         ),
+//                                         InkWell(
+//                                           onTap:(){
+//                                             //跳转页面
+//
+//                                             print('点击了标签');
+//                                           },
+//                                           child: Chip(
+//                                             label: Text("不放辣"),
+//
+//                                         ),
+//                                         ),
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-                                       ],
+//                                       ],
                                      ),
 
                                  ),
