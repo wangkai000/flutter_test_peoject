@@ -9,6 +9,7 @@ import 'package:dio/dio.dart';
 import 'package:testflutter/common/httpConfig.dart';
 import 'package:testflutter/common/httpConfig.dart';
 import 'package:testflutter/common/openingOrder.dart';
+import 'package:testflutter/common/receivables.dart';
 
 void main() => runApp(MyApp());
 
@@ -159,7 +160,7 @@ class _DemoState extends State<Demo> {
                           fillColor: Colors.white,
                         ),
                         obscureText: false,
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.deepOrange),
                         maxLength: 10,
                         maxLengthEnforced: false,
                       ),
@@ -207,7 +208,8 @@ class _DemoState extends State<Demo> {
                     ),
                     MaterialButton(
                         onPressed: () {
-                          
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (BuildContext context) => receivables()));
                         },
                       child:Text("收款"),
                     )
@@ -228,6 +230,8 @@ Future getData(url, data, BuildContext context) async {
     showToast(" success  ",
         backgroundColor: Color.fromARGB(110, 110, 255, 255));
     //跳转页面
+
+
     Navigator.push(context,
         MaterialPageRoute(builder: (BuildContext context) => openingOrder()));
   }

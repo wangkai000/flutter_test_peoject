@@ -43,13 +43,11 @@ class openingOrderState extends State<WidgetHome> {
     super.initState();
     _remarks = TextEditingController();
 
-
-
   }
 
   @override
   void didChangeDependencies() {
-//    print('didChangeDependencies 状态变化');
+    print('didChangeDependencies 状态变化');
     super.didChangeDependencies();
   }
 
@@ -57,7 +55,7 @@ class openingOrderState extends State<WidgetHome> {
 
   @override
   void deactivate() {
-//    print('deactivate 离开页面(停用 非销毁)');
+    print('deactivate 离开页面(停用 非销毁)');
     super.deactivate();
   }
 
@@ -65,7 +63,7 @@ class openingOrderState extends State<WidgetHome> {
 
   @override
   void dispose() {
-//    print('dispose 销毁');
+    print('dispose 销毁');
 //    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
 
@@ -107,7 +105,17 @@ class openingOrderState extends State<WidgetHome> {
                                              }
                                              },
                                              child: Chip(
-                                               label: Text("${item['name']}"),
+                                               backgroundColor:Color.fromRGBO(255, 255, 255, 1),
+
+                                               label: Text("${item['name']}",
+
+                                                 style:TextStyle(
+                                                   fontSize: 13,
+                                                   color:Color.fromRGBO(160, 160, 160, 1),
+
+                                                 ),
+
+                                               ),
 
                                            ),
                                          ),
@@ -663,6 +671,7 @@ class openingOrderState extends State<WidgetHome> {
                                      ),
 
                                    ),
+
                                    ),
 
 
@@ -677,11 +686,14 @@ class openingOrderState extends State<WidgetHome> {
                                            controller: _remarks,
                                            maxLines: 1,
                                            maxLength:20,
+
+                                           style:TextStyle(color:Color.fromRGBO(51, 51, 51, 1),fontSize:12),
                                            decoration: InputDecoration.collapsed(hintText: "请填写菜品备注,最多20字",
                                                hintStyle:TextStyle(fontSize: 12, color: Colors.grey),
                                            ),
 
                                          ),
+
                                        ),
                                        ),
 

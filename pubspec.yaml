@@ -27,6 +27,7 @@ dependencies:
   oktoast: ^2.1.7
   dio: 2.1.0
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -46,8 +47,11 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/active_radio.png
-  #  - images/a_dot_ham.jpeg
+    - assets/images/icon10.png
+    - assets/images/icon13.png
+    - assets/images/icon14.png
 
+  #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
