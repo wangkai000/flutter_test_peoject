@@ -340,7 +340,100 @@ class _State extends State<receivables> {
                                                       ),
 
                                                       onPressed:(){
-                                                        print("点击结账");
+                                                        showDialog(context: context, child: Column(
+                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                          children: <Widget>[
+
+                                                            Material(
+                                                              type: MaterialType.transparency,
+                                                              child: Container(
+                                                                width: double.infinity,
+                                                                color: Colors.white,
+                                                                height: 300,
+                                                                child: Text('sdsd'),
+                                                              ),
+                                                            ),
+
+                                                          ],
+                                                        ), barrierDismissible: true);
+                                                        
+                                                        return;
+
+                                                        showCupertinoDialog(
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return  CupertinoAlertDialog(
+                                                                title:  Text(''),
+                                                                content: SingleChildScrollView(
+                                                                  child: ListBody(
+                                                                    children: <Widget>[
+                                                                      Text('点击结账后',
+                                                                      style:TextStyle(
+                                                                        fontSize:17,
+                                                                        color:Color.fromRGBO(51, 51, 51, 1),
+                                                                      ),
+                                                                      ),
+                                                                      Text('用户可扫桌子二维码买单',
+                                                                        style:TextStyle(
+                                                                          fontSize:17,
+                                                                          color:Color.fromRGBO(51, 51, 51, 1),
+                                                                        ),
+                                                                      ),
+
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                                actions: <Widget>[
+                                                                   CupertinoDialogAction(
+                                                                    child: new Text('取消'),
+                                                                    isDefaultAction: true,
+                                                                    onPressed: () {
+                                                                      Navigator.of(context).pop();
+                                                                    },
+                                                                  ),
+                                                                   CupertinoDialogAction(
+                                                                    child: new Text('确定'),
+                                                                    isDestructiveAction: true,
+                                                                    onPressed: () {
+                                                                      Navigator.of(context).pop();
+                                                                    },
+                                                                  ),
+                                                                ],
+                                                              );
+                                                            });
+
+//                                                          return showDialog<void>(
+//                                                            context: context,
+//                                                            barrierDismissible: false, // user must tap button!
+//                                                            builder: (BuildContext context) {
+//                                                              return AlertDialog(
+//                                                                title: Text("提示"),
+//                                                                content: SingleChildScrollView(
+//                                                                  child: ListBody(
+//                                                                    children: <Widget>[
+//                                                                      Text('点击结账后'),
+//                                                                      Text('用户可扫桌子二维码买单'),
+//                                                                    ],
+//                                                                  ),
+//                                                                ),
+//                                                                actions: <Widget>[
+//                                                                  FlatButton(
+//                                                                    child: Text('取消'),
+//                                                                    onPressed: () {
+//                                                                      Navigator.of(context).pop();
+//                                                                    },
+//                                                                  ),
+//                                                                  FlatButton(
+//                                                                    child: Text('确定'),
+//                                                                    onPressed: () {
+//                                                                      Navigator.of(context).pop();
+//                                                                    },
+//                                                                  ),
+//                                                                ],
+//                                                              );
+//                                                            },
+//                                                          );
+
                                                       }),
                                                 ),
 
