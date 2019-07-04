@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'package:testflutter/common/radio.dart';
+import 'package:testflutter/ui/widgets/radio.dart';
 
 class tablePosition extends StatefulWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:testflutter/common/tablePosition.dart';
+import 'package:testflutter/ui/pages/tablePosition.dart';
 
 
 

@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 
+import 'package:testflutter/ui/widgets/ordinaryDialog.dart';
+
+
 class  receivables extends StatefulWidget {
   @override
   _State createState() => _State();
@@ -172,10 +175,27 @@ class _State extends State<receivables> {
 
                                                  style:TextStyle(fontSize:14,color:Color.fromRGBO(102, 102, 102, 1)),
                                                ),
-                                               Text("-¥${0.88}",
+                                               Row(
+                                                  children: <Widget>[
+                                                    Text("-¥${0.88}",
 
-                                                 style:TextStyle(fontSize:14,color:Color.fromRGBO(255, 89, 75, 1)),
+                                                      style:TextStyle(fontSize:14,color:Color.fromRGBO(255, 89, 75, 1)),
+                                                    ),
+                                                    InkWell(
+                                                        onTap:(){
+                                                          print("点击了删除");
+                                                        },
+                                                        child:Icon(Icons.highlight_off,
+                                                        color:Colors.grey,
+                                                        ),
+                                                    )
+
+                                                  ],
+
                                                ),
+
+
+//
                                              ],
                                            ),
 
@@ -230,7 +250,7 @@ class _State extends State<receivables> {
 
                                                   child:Container(
                                                     decoration:  BoxDecoration(
-                                                      boxShadow: [BoxShadow(color: Color.fromRGBO(63, 66, 67, .3), offset: Offset(1.0, 1.0), blurRadius: 8.0, spreadRadius: 1.0), ],
+                                                      boxShadow: [BoxShadow(color: Color.fromRGBO(63, 66, 67, .1), offset: Offset(0.5, 1.0), blurRadius: 5.0, spreadRadius: 0.3), ],
                                                     ),
                                                     child: ClipRRect(
                                                       borderRadius:BorderRadius.circular(12),
@@ -266,7 +286,7 @@ class _State extends State<receivables> {
 
                                                     child:Container(
                                                       decoration:  BoxDecoration(
-                                                        boxShadow: [BoxShadow(color: Color.fromRGBO(63, 66, 67, .3), offset: Offset(1.0, 1.0), blurRadius: 8.0, spreadRadius: 1.0), ],
+                                                        boxShadow: [BoxShadow(color: Color.fromRGBO(63, 66, 67, .1), offset: Offset(0.5, 1.0), blurRadius: 5.0, spreadRadius: 0.3), ],
                                                       ),
                                                       child: ClipRRect(
                                                         borderRadius:BorderRadius.circular(12),
@@ -321,145 +341,192 @@ class _State extends State<receivables> {
                                         child:Container(
                                             child:Column(
                                               children: <Widget>[
-                                                Container(
+                                                InkWell(
+                                                  onTap:(){
 
-                                                  height:40.0,
 
-                                                  child:MaterialButton(
-                                                      color:Color.alphaBlend(Color.fromRGBO(255, 89, 75, 1), Color.fromRGBO(255, 30, 19, 1)),
-                                                      textColor: Colors.white,
-                                                      minWidth: 260.0,
-                                                      shape:RoundedRectangleBorder(
-                                                          borderRadius:BorderRadius.all(Radius.circular(20))
-                                                      ),
 
-                                                      child:Text("结账",
-                                                          style:TextStyle(
-                                                            fontSize:16,
+                                                    List<Widget> AlreadyCheck=[];
+                                                    AlreadyCheck=[
+                                                      Row(
+                                                        mainAxisSize: MainAxisSize.min,
+                                                        children: <Widget>[
+                                                          Text("请确认",
+                                                            textAlign:TextAlign.center,
+                                                            style:TextStyle(
+                                                              fontSize:16,
+                                                              color:Color.fromRGBO(51, 51, 51, 1),
+
+                                                            ),
+                                                          ),
+                                                          Text("${"A666"}",
+                                                            textAlign:TextAlign.center,
+                                                            style:TextStyle(
+                                                              fontSize:16,
+                                                              color:Color.fromRGBO(255, 89, 75, 1),
+
+                                                            ),
+                                                          ),
+                                                          Text("桌台已经买单",
+                                                            textAlign:TextAlign.center,
+                                                            style:TextStyle(
+                                                              fontSize:16,
+                                                              color:Color.fromRGBO(51, 51, 51, 1),
+
+                                                            ),
                                                           )
+                                                        ],
                                                       ),
 
-                                                      onPressed:(){
-                                                        showDialog(context: context, child: Column(
-                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                          children: <Widget>[
 
-                                                            Material(
-                                                              type: MaterialType.transparency,
-                                                              child: Container(
-                                                                width: double.infinity,
-                                                                color: Colors.white,
-                                                                height: 300,
-                                                                child: Text('sdsd'),
-                                                              ),
+                                                      Text("点击确定后该桌台可继续开单",
+                                                        textAlign:TextAlign.center,
+                                                        style:TextStyle(
+                                                          fontSize:16,
+                                                          color:Color.fromRGBO(51, 51, 51, 1),
+
+                                                        ),
+                                                      )
+                                                    ];
+                                                    DialogStart(context,
+                                                         (){
+
+                                                          Navigator.of(context).pop();
+                                                        }
+
+                                                        ,AlreadyCheck);
+
+
+
+
+
+
+                                                  },
+                                                  child: Padding(
+                                                    padding:const EdgeInsets.fromLTRB(30, 0, 30, 0),
+
+
+                                                    child: Container(
+
+                                                      width:300,
+                                                      child: Container(
+                                                        height: 40.0,
+
+
+                                                        decoration:  BoxDecoration(
+                                                          color:Color.fromRGBO(1, 1, 1, 1),
+//                                                          border:  Border.all(color:Color.fromRGBO(255, 89, 75, 1), width: 1), // 边色与边宽度
+                                                          borderRadius: new BorderRadius.circular((20.0)), // 圆角度
+                                                          gradient:LinearGradient(
+                                                              colors: [Color.fromRGBO(255, 89, 75, 1), Color.fromRGBO(255, 30, 19, 1) ]),
+                                                        ),
+                                                        child:Center(
+
+                                                          child: Text("结账",
+                                                            textAlign:TextAlign.center,
+                                                            style:TextStyle(
+                                                              fontSize: 16,
+                                                              color:Color.fromRGBO(255, 255, 255, 1),
                                                             ),
 
-                                                          ],
-                                                        ), barrierDismissible: true);
-                                                        
-                                                        return;
+                                                          ),
+                                                        ),
 
-                                                        showCupertinoDialog(
-                                                            context: context,
-                                                            builder: (context) {
-                                                              return  CupertinoAlertDialog(
-                                                                title:  Text(''),
-                                                                content: SingleChildScrollView(
-                                                                  child: ListBody(
-                                                                    children: <Widget>[
-                                                                      Text('点击结账后',
-                                                                      style:TextStyle(
-                                                                        fontSize:17,
-                                                                        color:Color.fromRGBO(51, 51, 51, 1),
-                                                                      ),
-                                                                      ),
-                                                                      Text('用户可扫桌子二维码买单',
-                                                                        style:TextStyle(
-                                                                          fontSize:17,
-                                                                          color:Color.fromRGBO(51, 51, 51, 1),
-                                                                        ),
-                                                                      ),
+                                                      ),
+                                                    ),
 
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                actions: <Widget>[
-                                                                   CupertinoDialogAction(
-                                                                    child: new Text('取消'),
-                                                                    isDefaultAction: true,
-                                                                    onPressed: () {
-                                                                      Navigator.of(context).pop();
-                                                                    },
-                                                                  ),
-                                                                   CupertinoDialogAction(
-                                                                    child: new Text('确定'),
-                                                                    isDestructiveAction: true,
-                                                                    onPressed: () {
-                                                                      Navigator.of(context).pop();
-                                                                    },
-                                                                  ),
-                                                                ],
-                                                              );
-                                                            });
-
-//                                                          return showDialog<void>(
-//                                                            context: context,
-//                                                            barrierDismissible: false, // user must tap button!
-//                                                            builder: (BuildContext context) {
-//                                                              return AlertDialog(
-//                                                                title: Text("提示"),
-//                                                                content: SingleChildScrollView(
-//                                                                  child: ListBody(
-//                                                                    children: <Widget>[
-//                                                                      Text('点击结账后'),
-//                                                                      Text('用户可扫桌子二维码买单'),
-//                                                                    ],
-//                                                                  ),
-//                                                                ),
-//                                                                actions: <Widget>[
-//                                                                  FlatButton(
-//                                                                    child: Text('取消'),
-//                                                                    onPressed: () {
-//                                                                      Navigator.of(context).pop();
-//                                                                    },
-//                                                                  ),
-//                                                                  FlatButton(
-//                                                                    child: Text('确定'),
-//                                                                    onPressed: () {
-//                                                                      Navigator.of(context).pop();
-//                                                                    },
-//                                                                  ),
-//                                                                ],
-//                                                              );
-//                                                            },
-//                                                          );
-
-                                                      }),
+                                                  ),
                                                 ),
 
 
-                                                Padding(
-                                                  padding: const EdgeInsets.all(13.0),
-                                                  child: Container(
-                                                    height: 40.0,
+                                                InkWell(
+                                                  onTap:(){
 
-                                                    child:MaterialButton(
-                                                        color: Color.fromRGBO(255, 255, 255, 1),
-                                                        textColor: Color.fromRGBO(255, 89, 75, 1),
-                                                        minWidth: 260.0,
-                                                        shape:RoundedRectangleBorder(
-                                                            borderRadius:BorderRadius.all(Radius.circular(20))
-                                                        ),
+                                                    List<Widget> AlreadyCheck=[];
+                                                    AlreadyCheck=[
+                                                       Row(
+                                                         mainAxisSize: MainAxisSize.min,
+                                                          children: <Widget>[
+                                                            Text("请确认",
+                                                              textAlign:TextAlign.center,
+                                                              style:TextStyle(
+                                                                fontSize:16,
+                                                                color:Color.fromRGBO(51, 51, 51, 1),
 
-                                                        padding:  EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-                                                        child:Text("客户已买单",
-                                                            style:TextStyle(
-                                                              fontSize:16,
+                                                              ),
+                                                            ),
+                                                            Text("${"A666"}",
+                                                              textAlign:TextAlign.center,
+                                                              style:TextStyle(
+                                                                fontSize:16,
+                                                                color:Color.fromRGBO(255, 89, 75, 1),
+
+                                                              ),
+                                                            ),
+                                                            Text("桌台已经买单",
+                                                              textAlign:TextAlign.center,
+                                                              style:TextStyle(
+                                                                fontSize:16,
+                                                                color:Color.fromRGBO(51, 51, 51, 1),
+
+                                                              ),
                                                             )
+                                                          ],
+                                                       ),
+
+
+                                                       Text("点击确定后该桌台可继续开单",
+                                                       textAlign:TextAlign.center,
+                                                       style:TextStyle(
+                                                         fontSize:16,
+                                                         color:Color.fromRGBO(51, 51, 51, 1),
+
+                                                       ),
+                                                       )
+                                                    ];
+                                                    DialogStart(context,
+
+                                                        (){
+                                                          print("点击了确定");
+                                                          Navigator.of(context).pop();
+                                                        }
+
+                                                        ,AlreadyCheck);
+
+
+
+
+
+                                                  },
+                                                  child: Padding(
+                                                    padding:const EdgeInsets.fromLTRB(30, 16, 30, 0),
+
+
+                                                      child: Container(
+
+                                                        width:300,
+                                                        child: Container(
+                                                          height: 40.0,
+
+                                                          decoration:  BoxDecoration(
+                                                            color:Color.fromRGBO(255, 255, 255, 1),
+                                                            border:  Border.all(color:Color.fromRGBO(255, 89, 75, 1), width: 1), // 边色与边宽度
+                                                            borderRadius: new BorderRadius.circular((20.0)), // 圆角度
+                                                          ),
+                                                          child:Center(
+                                                            child: Text("客户已买单",
+                                                            textAlign:TextAlign.center,
+                                                            style:TextStyle(
+                                                              fontSize: 16,
+                                                              color:Color.fromRGBO(255, 89, 75, 1),
+                                                            ),
+
+                                                            ),
+                                                          ),
+
                                                         ),
-                                                        onPressed:(){
-                                                          print("点击结账");
-                                                        }),
+                                                      ),
+
                                                   ),
                                                 ),
                                               ],

@@ -8,8 +8,8 @@ import 'package:dio/dio.dart';
 //import 'package:testflutter/lib/httpConfig.dart';
 import 'package:testflutter/common/httpConfig.dart';
 import 'package:testflutter/common/httpConfig.dart';
-import 'package:testflutter/common/openingOrder.dart';
-import 'package:testflutter/common/receivables.dart';
+import 'package:testflutter/ui/pages/openingOrder.dart';
+import 'package:testflutter/ui/pages/receivables.dart';
 
 void main() => runApp(MyApp());
 
