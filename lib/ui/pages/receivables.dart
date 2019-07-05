@@ -386,7 +386,34 @@ class _State extends State<receivables> {
                                                           color:Color.fromRGBO(51, 51, 51, 1),
 
                                                         ),
-                                                      )
+                                                      ),
+
+                                                      Text("点击确定后该桌台可继续开单",
+                                                        textAlign:TextAlign.center,
+                                                        style:TextStyle(
+                                                          fontSize:16,
+                                                          color:Color.fromRGBO(51, 51, 51, 1),
+
+                                                        ),
+                                                      ),
+
+                                                      Text("点击确定后该桌台可继续开单",
+                                                        textAlign:TextAlign.center,
+                                                        style:TextStyle(
+                                                          fontSize:16,
+                                                          color:Color.fromRGBO(51, 51, 51, 1),
+
+                                                        ),
+                                                      ),
+
+                                                      Text("点击确定后该桌台可继续开单",
+                                                        textAlign:TextAlign.center,
+                                                        style:TextStyle(
+                                                          fontSize:16,
+                                                          color:Color.fromRGBO(51, 51, 51, 1),
+
+                                                        ),
+                                                      ),
                                                     ];
                                                     DialogStart(context,
                                                          (){

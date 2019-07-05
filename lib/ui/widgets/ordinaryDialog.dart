@@ -22,19 +22,24 @@ import 'package:flutter/material.dart';
                       child: Container(
                         width:300,
                         color: Colors.white,
-                        height: 300,
+
                         child:Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             Container(
-                              height:40,
+                              height:20,
 
 
                             ),
                             Container(
-                                height:160,
-                                padding:const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                                child:SingleChildScrollView(
+                                constraints:  BoxConstraints(
 
+                                  maxHeight: 300.0,
+
+                                ),
+                                padding:const EdgeInsets.fromLTRB(10, 26, 10, 30),
+                                child:SingleChildScrollView(
+//                                  scrollDirection:Axis.vertical,
                                   child:Column(
 //                                    children: <Widget>[
 //                                      Text("2333"),
@@ -50,7 +55,10 @@ import 'package:flutter/material.dart';
                                 children: <Widget>[
                                   Expanded(
                                     child: InkWell(
-                                      onTap: confirm,
+
+                                      onTap:(){
+                                        Navigator.of(context).pop();
+                                      },
                                       child: Container(
                                         padding:const EdgeInsets.fromLTRB(20, 0, 20, 0),
                                         child: Container(
@@ -82,9 +90,7 @@ import 'package:flutter/material.dart';
 
                                   Expanded(
                                     child: InkWell(
-                                      onTap:(){
-                                        Navigator.of(context).pop();
-                                      },
+                                      onTap:confirm,
 
                                       child: Container(
 
