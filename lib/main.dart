@@ -160,7 +160,7 @@ class _DemoState extends State<Demo> {
                           fillColor: Colors.white,
                         ),
                         obscureText: false,
-                        style: TextStyle(color: Colors.deepOrange),
+                        style: TextStyle(color: Colors.black),
                         maxLength: 10,
                         maxLengthEnforced: false,
                       ),

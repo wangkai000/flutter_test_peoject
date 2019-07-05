@@ -12,6 +12,27 @@ class  receivables extends StatefulWidget {
 }
 
 class _State extends State<receivables> {
+
+  TextEditingController _usernameCon;
+
+  @override
+  void initState() {
+    super.initState();
+    _usernameCon = TextEditingController();
+
+  }
+
+
+  @override
+  void dispose() {
+    _usernameCon.dispose();
+
+
+    super.dispose();
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -183,7 +204,27 @@ class _State extends State<receivables> {
                                                     ),
                                                     InkWell(
                                                         onTap:(){
-                                                          print("点击了删除");
+
+                                                          List<Widget> AlreadyCheck=[];
+                                                          AlreadyCheck=[
+                                                             Text("确定清空优惠吗？",
+                                                             style:TextStyle(
+                                                               fontSize:16,
+                                                             ),
+                                                             ),
+
+                                                          ];
+                                                          DialogStart(context,
+                                                                  (){
+
+                                                                    Navigator.of(context).pop();
+                                                                 }
+
+                                                              ,AlreadyCheck);
+
+
+
+
                                                         },
                                                         child:Icon(Icons.highlight_off,
                                                         color:Colors.grey,
@@ -254,22 +295,140 @@ class _State extends State<receivables> {
                                                     ),
                                                     child: ClipRRect(
                                                       borderRadius:BorderRadius.circular(12),
-                                                      child: Container(
-                                                        height:50,
-                                                        padding:const EdgeInsets.fromLTRB(16, 3, 16, 3),
-                                                        color:Color.fromRGBO(255, 255, 255, 1),
-                                                         child:Row(
+                                                      child: InkWell(
+                                                       onTap:(){
+                                                                 List<Widget> AlreadyCheck=[];
+
+                                                                 AlreadyCheck=[
+                                                                   Text("简单打折",
+                                                                     style:TextStyle(
+                                                                       fontSize:16,
+                                                                       color:Color.fromRGBO(51, 51, 51, 1)
+                                                                     ),
+                                                                   ),
+                                                                   Padding(
+                                                                     padding: const EdgeInsets.all(10.0),
+                                                                     child: Text("折扣率(%)",
+
+                                                                       style:TextStyle(
+                                                                           fontSize:14,
+                                                                           color:Color.fromRGBO(204, 204, 204, 1)
+                                                                       ),
+                                                                     ),
+                                                                   ),
+                                                                   Container(
+                                                                     height:30,
+                                                                     decoration:  BoxDecoration(
+
+
+                                                                       border:  Border.all(color:Color.fromRGBO(229, 229, 229, 1), width: 1), // 边色与边宽度
+                                                                       borderRadius:  BorderRadius.circular((10.0)), // 圆角度
+                                                                     ),
+                                                                     child:  Padding(
+                                                                       padding: const EdgeInsets.all(2.0),
+                                                                       child: TextFormField(
+                                                                       controller: _usernameCon,
+                                                                         textAlign:TextAlign.center,
+                                                                         decoration:  InputDecoration(
+                                                                           border: InputBorder.none,
+
+                                                                           //去掉输入框的下滑线
+                                                                           filled: false,
+                                                                           hintStyle: TextStyle(
+
+                                                                               color: Colors.deepOrange, fontSize: 13.0),
+
+
+                                                                           counterStyle: TextStyle(color: Colors.deepOrange),
+                                                                           labelStyle: TextStyle(
+                                                                             color: Colors.white,
+                                                                             fontSize: 14,
+                                                                           ),
+
+                                                                           contentPadding: EdgeInsets.all(5.0),
+                                                                           fillColor: Colors.white,
+                                                                           counterText: "", //此处控制最大字符是否显示
+                                                                         ),
+
+                                                                         style: TextStyle(color: Color.fromRGBO(51, 51, 51, 1),),
+                                                                         maxLength: 10,
+                                                                         maxLengthEnforced: true,
+                                                                       ),
+                                                                     ),
+                                                                   ),
+                                                                   Container(
+                                                                     margin:const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                                                     height:30,
+                                                                     decoration:  BoxDecoration(
+
+
+                                                                       border:  Border.all(color:Color.fromRGBO(229, 229, 229, 1), width: 1), // 边色与边宽度
+                                                                       borderRadius:  BorderRadius.circular((10.0)), // 圆角度
+                                                                     ),
+                                                                     child:  Padding(
+                                                                       padding: const EdgeInsets.all(2.0),
+                                                                       child: TextFormField(
+
+                                                                         controller: _usernameCon,
+
+                                                                         decoration:  InputDecoration(
+                                                                           border: InputBorder.none,
+                                                                           hintText:"备注",
+                                                                           //去掉输入框的下滑线
+                                                                           filled: false,
+                                                                           hintStyle: TextStyle(
+
+                                                                               color: Color.fromRGBO(51, 51, 51, 1), fontSize: 13.0),
+
+
+                                                                           counterStyle: TextStyle(color: Color.fromRGBO(51, 51, 51, 1),),
+
+                                                                           labelStyle: TextStyle(
+
+                                                                             color: Colors.white,
+                                                                             fontSize: 14,
+                                                                           ),
+
+                                                                           contentPadding: EdgeInsets.all(5.0),
+                                                                           fillColor: Colors.white,
+                                                                           counterText: "", //此处控制最大字符是否显示
+                                                                         ),
+
+                                                                         style: TextStyle(color: Color.fromRGBO(51, 51, 51, 1),),
+                                                                         maxLength: 10,
+                                                                         maxLengthEnforced: true,
+                                                                       ),
+                                                                     ),
+                                                                   ),
+
+
+
+                                                                 ];
+                                                                 DialogStart(context,
+                                                                  (){
+                                                                   print(_usernameCon.text);
+
+                                                                   Navigator.of(context).pop();
+                                                                  },AlreadyCheck);
+                                                         },
+
+                                                        child: Container(
+                                                          height:50,
+                                                          padding:const EdgeInsets.fromLTRB(16, 3, 16, 3),
+                                                          color:Color.fromRGBO(255, 255, 255, 1),
+                                                           child:Row(
 //                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                          children: <Widget>[
-                                                              Image.asset("assets/images/icon13.png",width: 26.0,height: 26.0,),
-                                                             Text(" 整单打折",
-                                                             textAlign:TextAlign.center,
-                                                             style:TextStyle(
-                                                               fontSize:14,
-                                                               color:Color.fromRGBO(51, 51, 51, 1),
-                                                             ),
-                                                             ),
-                                                          ],
+                                                            children: <Widget>[
+                                                                Image.asset("assets/images/icon13.png",width: 26.0,height: 26.0,),
+                                                               Text(" 整单打折",
+                                                               textAlign:TextAlign.center,
+                                                               style:TextStyle(
+                                                                 fontSize:14,
+                                                                 color:Color.fromRGBO(51, 51, 51, 1),
+                                                               ),
+                                                               ),
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
@@ -290,22 +449,27 @@ class _State extends State<receivables> {
                                                       ),
                                                       child: ClipRRect(
                                                         borderRadius:BorderRadius.circular(12),
-                                                        child: Container(
-                                                          height:50,
-                                                          padding:const EdgeInsets.fromLTRB(16, 3, 16, 3),
-                                                          color:Color.fromRGBO(255, 255, 255, 1),
-                                                          child:Row(
+                                                        child: InkWell(
+                                                          onTap:(){
+
+                                                          },
+                                                          child: Container(
+                                                            height:50,
+                                                            padding:const EdgeInsets.fromLTRB(16, 3, 16, 3),
+                                                            color:Color.fromRGBO(255, 255, 255, 1),
+                                                            child:Row(
 //                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                            children: <Widget>[
-                                                              Image.asset("assets/images/icon14.png",width: 26.0,height: 26.0,),
-                                                              Text(" 自定义减价",
-                                                                textAlign:TextAlign.center,
-                                                                style:TextStyle(
-                                                                  fontSize:14,
-                                                                  color:Color.fromRGBO(51, 51, 51, 1),
+                                                              children: <Widget>[
+                                                                Image.asset("assets/images/icon14.png",width: 26.0,height: 26.0,),
+                                                                Text(" 自定义减价",
+                                                                  textAlign:TextAlign.center,
+                                                                  style:TextStyle(
+                                                                    fontSize:14,
+                                                                    color:Color.fromRGBO(51, 51, 51, 1),
+                                                                  ),
                                                                 ),
-                                                              ),
-                                                            ],
+                                                              ],
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
